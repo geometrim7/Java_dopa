@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+<script type="text/javascript"> 
+                 function okno_zamknij_zamojski()  
+                       { 
+                             window.close() 
+                       } 
+            </script> 
+<script>
+  let win1, win2, win3, win4;
+
+  function WinOpen_z1() {
+    win1 = window.open("grafika_1.html", "okienko_z1", "width=200,height=300,left=100,top=50");
+  }
+
+  function WinOpen_z2() {
+    win2 = window.open("grafika_2.html", "okienko_z2", "width=200,height=300,left=1600,top=50");
+  }
+
+  function WinOpen_z3() {
+    win3 = window.open("grafika_3.html", "okienko_z3", "width=200,height=300,left=100,top=700");
+  }
+
+  function WinOpen_z4() {
+    win4 = window.open("grafika_4.html", "okienko_z4", "width=200,height=300,left=1600,top=700");
+  }
+</script>
+</head>
+<body>
+<h1 style="color:red">
+wykonał: Michał Zamojski mój numer w dzienniku 30, czyli <br>
+mam układ [(30) mod 4=2] układ 2
+</h1>
+<button onclick="WinOpen_z1()">Grafika 1</button>
+<button onclick="WinOpen_z2()">Grafika 2</button>
+<button onclick="WinOpen_z3()">Grafika 3</button>
+<button onclick="WinOpen_z4()">Grafika 4</button>
+<br><br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_zamojski()"/>
+</body>
+</html>
