@@ -1,0 +1,90 @@
+<html> 
+   <body> 
+     <textarea cols="110" rows="85">
+<html>
+<head>
+<title>Zadanie 20</title>
+<meta charset="UTF-8">
+<script language="JavaScript">
+
+function AB_zam(xa_zam, ya_zam, xb_zam, yb_zam) {
+  xa_zam = parseFloat(xa_zam);
+  ya_zam = parseFloat(ya_zam);
+  xb_zam = parseFloat(xb_zam);
+  yb_zam = parseFloat(yb_zam);
+
+  var ab = Math.sqrt(Math.pow(xb_zam - xa_zam, 2) + Math.pow(yb_zam - ya_zam, 2));
+  document.getElementsByName('AB')[0].value = ab.toFixed(2);
+  alert("Długość AB = " + ab.toFixed(2));
+  wynik_AB.innerHTML = "AB = " + ab.toFixed(2);
+}
+
+function BC_zam(xb_zam, yb_zam, xc_zam, yc_zam) {
+  xb_zam = parseFloat(xb_zam);
+  yb_zam = parseFloat(yb_zam);
+  xc_zam = parseFloat(xc_zam);
+  yc_zam = parseFloat(yc_zam);
+
+  var bc = Math.sqrt(Math.pow(xc_zam - xb_zam, 2) + Math.pow(yc_zam - yb_zam, 2));
+  document.getElementsByName('BC')[0].value = bc.toFixed(2);
+  alert("Długość BC = " + bc.toFixed(2));
+  wynik_BC.innerHTML = "BC = " + bc.toFixed(2);
+}
+
+function AC_zam(xa_zam, ya_zam, xc_zam, yc_zam) {
+  xa_zam = parseFloat(xa_zam);
+  ya_zam = parseFloat(ya_zam);
+  xc_zam = parseFloat(xc_zam);
+  yc_zam = parseFloat(yc_zam);
+
+  var ac = Math.sqrt(Math.pow(xc_zam - xa_zam, 2) + Math.pow(yc_zam - ya_zam, 2));
+  document.getElementsByName('AC')[0].value = ac.toFixed(2);
+  alert("Długość AC = " + ac.toFixed(2));
+  wynik_AC.innerHTML = "AC = " + ac.toFixed(2);
+}
+
+function oblicz_wszystko(form) {
+  AB_zam(form.xa_zam.value, form.ya_zam.value, form.xb_zam.value, form.yb_zam.value);
+  BC_zam(form.xb_zam.value, form.yb_zam.value, form.xc_zam.value, form.yc_zam.value);
+  AC_zam(form.xa_zam.value, form.ya_zam.value, form.xc_zam.value, form.yc_zam.value);
+  return false;
+}
+
+function okno_zamknij_zam() {
+  window.close();
+}
+
+</script>
+</head>
+<body>
+<h3>Obliczanie długości boków trójkąta</h3>
+
+<form name="formularz" onsubmit="return oblicz_wszystko(this)">
+Punkt A: xa=<input size="4" name="xa_zam"> ya=<input size="4" name="ya_zam"><br><br>
+Punkt B: xb=<input size="4" name="xb_zam"> yb=<input size="4" name="yb_zam"><br><br>
+Punkt C: xc=<input size="4" name="xc_zam"> yc=<input size="4" name="yc_zam"><br><br>
+
+<input type="submit" value="Oblicz boki"><br><br>
+
+AB=<input size="6" name="AB">  
+BC=<input size="6" name="BC">  
+AC=<input size="6" name="AC">
+</form>
+
+<table>
+<tr id="wynik_AB"></tr>
+<tr id="wynik_BC"></tr>
+<tr id="wynik_AC"></tr>
+</table>
+
+<br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_zam()"/>
+</body>
+</html>
+
+
+
+      </textarea> 
+    </body> 
+
+</html> 
