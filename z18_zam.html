@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Użycie funkcji (zadanie18-Narkiewicz)</title>
+</head>
+<body>
+  <div style="color:navy; font-size:30px;">
+    <script>
+      var a = parseFloat(prompt("Podaj a:", ""));
+      var b = parseFloat(prompt("Podaj b:", ""));
+
+      function suma_zam(a, b) {
+        return a + b;
+      }
+
+      function odejmowanie_zam(a, b) {
+        return a - b;
+      }
+ 
+ 
+      function mnozenie_zam(a, b) {
+        return a * b;
+      }
+ 
+      function od_kwadratu_zam(a, b) {
+        return "a^2 = " + (a * a) + ", b^2 = " + (b * b);
+      }
+ 
+      function reszta_z_dzielenia_a_zam_przez_b_zam(a, b) {
+        return a % b;
+      }
+
+
+      document.write("a = " + a + ", b = " + b + "<br><br>");
+      document.write("Suma = " + suma_zam(a, b) + "<br>");
+      document.write("Odejmowanie = " + odejmowanie_zam(a, b) + "<br>");
+      document.write("Mnożenie = " + mnozenie_zam(a, b) + "<br>");
+      document.write("Kwadraty liczb: " + od_kwadratu_zam(a, b) + "<br>");
+      document.write("Reszta z dzielenia a przez b = " + reszta_z_dzielenia_a_zam_przez_b_zam(a, b) + "<br>");
+
+    </script>
+  </div>
+</body>
+</html>
