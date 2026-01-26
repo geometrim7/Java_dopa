@@ -1,0 +1,72 @@
+<html> 
+   <body> 
+     <textarea cols="110" rows="35">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 32 – programowanie obiektowe</title>
+
+<script type="text/javascript">
+
+/* ====== KONSTRUKTOR KLASY ====== */
+function Uczen(nazwisko, imie, klasa) {
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+    this.klasa = klasa;
+}
+
+/* ====== METODA DODANA PRZEZ PROTOTYPE ====== */
+Uczen.prototype.przedstawSie = function () {
+    return "Uczeń: " + this.imie + " " + this.nazwisko + ", klasa " + this.klasa;
+};
+
+/* ====== TWORZENIE OBIEKTÓW ====== */
+var uczen1 = new Uczen("Zamojski", "Jan", "3TI");
+var uczen2 = new Uczen("Kowalski", "Adam", "2TI");
+
+/* ====== DOSTĘP DO WŁAŚCIWOŚCI ====== */
+document.write("<b>Dane ucznia 1:</b><br>");
+document.write(uczen1.imie + "<br>");
+document.write(uczen1.nazwisko + "<br>");
+document.write(uczen1.klasa + "<br><br>");
+
+/* ====== UŻYCIE METODY ====== */
+document.write("<b>Metoda przedstawSie():</b><br>");
+document.write(uczen1.przedstawSie() + "<br>");
+document.write(uczen2.przedstawSie() + "<br><br>");
+
+/* ====== OBIEKT NADRZĘDNY I KONTEKST this ====== */
+function PrzyciskInfo() {
+    this.tekst = "Kliknij mnie";
+    this.info = "To jest przycisk ucznia";
+
+    this.init = function () {
+        this.button = document.createElement("button");
+        this.button.innerHTML = this.tekst;
+
+        /* użycie bind() do zachowania kontekstu this */
+        this.button.addEventListener("click", function () {
+            alert(this.info);
+        }.bind(this));
+
+        document.body.appendChild(this.button);
+    };
+
+    this.init();
+}
+
+/* ====== UTWORZENIE OBIEKTU ====== */
+var przycisk = new PrzyciskInfo();
+
+</script>
+</head>
+
+<body>
+<h2>Zadanie 32 – Programowanie obiektowe JS</h2>
+</body>
+</html>
+      </textarea> 
+    </body> 
+
+</html> 

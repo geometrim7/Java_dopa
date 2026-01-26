@@ -1,0 +1,55 @@
+<html> 
+   <body> 
+     <textarea cols="110" rows="35">
+        
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 31 – Zamojski nr 30</title>
+    <script type="text/javascript">
+        
+        // Tworzenie obiektu samochód
+        var samochod = {
+            marka: "Toyota",
+            model: "Corolla",
+            rok: 2020,
+            pokaz: function () {
+                document.write(
+                    "Marka: " + this.marka + "<br>" +
+                    "Model: " + this.model + "<br>" +
+                    "Rok produkcji: " + this.rok + "<br>"
+                );
+            }
+        };
+
+        // Wywołanie metody
+        samochod.pokaz();
+
+        document.write("<br>");
+
+        // Dodanie nowego pola
+        samochod.kolor = "czarny";
+
+        // Dodanie nowej metody
+        samochod.wyswietlKolor = function () {
+            document.write("Kolor samochodu: " + this.kolor + "<br>");
+        };
+
+        // Wywołanie nowej metody
+        samochod.wyswietlKolor();
+
+    </script>
+</head>
+<body>
+    <br>
+    <b>Programowanie obiektowe</b><br>
+    Obiekt: samochod<br>
+    Pola: marka, model, rok, kolor<br>
+    Metody: pokaz(), wyswietlKolor()
+</body>
+</html>
+      </textarea> 
+    </body> 
+
+</html> 

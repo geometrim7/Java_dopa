@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 29 – Zamojski</title>
+</head>
+
+<body>
+
+<script language="JavaScript">
+/*
+ Zamojski
+ Zadanie 29 – Programowanie obiektowe JavaScript
+*/
+
+document.write("<h1>Zadanie 29</h1>");
+
+document.write("<h2>1. W jaki sposob mozna okreslic wlasciwosc danego obiektu?</h2>");
+document.write("Wlasciwosc obiektu mozna okreslic na dwa sposoby:<br>");
+document.write("<b>Sposob 1:</b><br>");
+document.write("nazwa_obiektu.nazwa_wlasciwosci = wartosc;<br>");
+document.write("np. auto.marka = 'Opel';<br><br>");
+
+document.write("<b>Sposob 2:</b><br>");
+document.write("nazwa_obiektu['nazwa_wlasciwosci'] = wartosc;<br>");
+document.write("np. auto['rok'] = 1995;<br><br>");
+
+document.write("<h2>2. W jaki sposob mozna odwolywac sie do pol (wlasciwosci) i metod?</h2>");
+document.write("Do wlasciwosci i metod obiektu mozna odwolywac sie podobnie jak do zmiennych i funkcji.<br>");
+document.write("np. obiekt.wlasciwosc lub obiekt.metoda();<br><br>");
+
+document.write("<h2>3. Wymien cechy charakterystyczne konstruktora</h2>");
+document.write("- uruchamiany automatycznie przy tworzeniu obiektu<br>");
+document.write("- ma taka sama nazwe jak klasa<br>");
+document.write("- nie zwraca zadnej wartosci<br>");
+document.write("- moze przyjmowac argumenty<br><br>");
+
+document.write("<h2>4. Konstruowanie obiektu na podstawie przykladu</h2>");
+
+function Osoba(nazwisko, imie, zawod)
+{
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+    this.zawod = zawod;
+    this.wyswietl = function()
+    {
+        document.write(this.nazwisko + ' ' + this.imie + ' - ' + this.zawod + '<br>');
+    }
+}
+
+var osoba1 = new Osoba("Kowalski", "Jan", "kierowca");
+var osoba2 = new Osoba("Nowak", "Anna", "sekretarka");
+
+osoba1.wyswietl();
+osoba2.wyswietl();
+
+document.write("<br>");
+
+document.write("<h2>5. Znaczenie slowa kluczowego this</h2>");
+document.write("Slowo kluczowe <b>this</b> oznacza aktualny obiekt, w ktorym znajduje sie kod.<br>");
+document.write("Pozwala odwolac sie do wlasciwosci i metod tego obiektu.<br><br>");
+
+document.write("<h2>6. Znaczenie slowa kluczowego new</h2>");
+document.write("Slowo kluczowe <b>new</b> sluzy do tworzenia nowego obiektu na podstawie konstruktora.<br><br>");
+
+document.write("<h2>7. Znaczenie slowa kluczowego prototype</h2>");
+document.write("Prototype sluzy do dodawania nowych wlasciwosci i metod do obiektow juz istniejacych.<br><br>");
+
+function Klient()
+{
+    this.nazwisko = "Bielski";
+    this.imie = "Pawel";
+}
+
+Klient.prototype.pisz_dane = function()
+{
+    document.write(this.nazwisko + ' ' + this.imie + '<br>');
+}
+
+var k1 = new Klient();
+k1.pisz_dane();
+
+document.write("<br>");
+
+document.write("<h2>Przyklad: Usuwanie wlasciwosci</h2>");
+
+var myObject =
+{
+    color: "zielony",
+    size: "duzy",
+    price: "wielka"
+};
+
+document.write("Cena przed usunieciem: " + myObject.price + "<br>");
+delete myObject.price;
+document.write("Cena po usunieciu: brak<br>");
+
+</script>
+
+</body>
+</html>
