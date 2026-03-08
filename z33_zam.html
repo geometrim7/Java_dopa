@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 33 - Zamojski</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f0f0f0;
+}
+
+.box{
+    width:400px;
+    margin:40px auto;
+    padding:20px;
+    border:2px solid black;
+    background:white;
+}
+
+img{
+    width:120px;
+    border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Logowanie</h2>
+
+Login:<br>
+<input type="text" id="login"><br><br>
+
+Hasło:<br>
+<input type="password" id="password"><br><br>
+
+<button onclick="zaloguj()">Zaloguj</button>
+
+<p id="komunikat"></p>
+
+</div>
+
+<div class="box" id="profil"></div>
+
+
+<script>
+
+// ===== 1. Konstruktor USER =====
+
+function User(email, password, avatar)
+{
+    this.email = email
+    this.password = password
+    this.avatar = avatar
+}
+
+
+
+// ===== 2. Obiekt userList =====
+
+var userList = {
+
+    users: [],
+
+    addUser:function(user)
+    {
+        this.users.push(user)
+    },
+
+    login:function(email,password)
+    {
+        for(var i=0;i<this.users.length;i++)
+        {
+            if(this.users[i].email==email && this.users[i].password==password)
+            {
+                return this.users[i]
+            }
+        }
+
+        return false
+    }
+
+}
+
+
+
+// przykładowy użytkownik
+var user1 = new User(
+"zamojski@mail.com",
+"1234",
+"https://i.pravatar.cc/150"
+)
+
+userList.addUser(user1)
+
+
+// ===== 3. formularz logowania =====
+
+function zaloguj()
+{
+
+    var login=document.getElementById("login").value
+    var password=document.getElementById("password").value
+
+    var user=userList.login(login,password)
+
+    if(user)
+    {
+        document.getElementById("komunikat").innerHTML="Można się zalogować"
+
+        var view=new UserView(user)
+        view.refresh()
+    }
+    else
+    {
+        document.getElementById("komunikat").innerHTML="Błędny login lub hasło"
+    }
+
+}
+
+
+
+// ===== Zadanie do zredagowania =====
+
+// konstruktor UserView
+
+function UserView(user)
+{
+    this.user=user
+}
+
+
+
+// metoda refresh w prototype
+
+UserView.prototype.refresh=function()
+{
+
+    var html=""
+
+    html+="<h3>Profil użytkownika</h3>"
+
+    html+="<img src='"+this.user.avatar+"'><br><br>"
+
+    html+="Email: <a href='mailto:"+this.user.email+"'>"
+    html+=this.user.email
+    html+="</a>"
+
+    document.getElementById("profil").innerHTML=html
+
+}
+
+</script>
+
+</body>
+</html>
