@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 59 - Zamojski</title>
+</head>
+<body>
+    <script>
+        let nr_dziennika_zam = 30; 
+        let koniec_zam = nr_dziennika_zam + 15; 
+        let tragic_licznik_zam = 0;
+
+        document.write("<h2>Obliczanie pierwiastków dla liczb od " + nr_dziennika_zam + " do " + koniec_zam + "</h2>");
+
+        for (let i = nr_dziennika_zam; i <= koniec_zam; i++) {
+            let pierw_2_zam = Math.sqrt(i);
+            let pierw_4_zam = Math.sqrt(pierw_2_zam);
+
+            document.write("i = " + i + " &nbsp;&nbsp;&nbsp;&nbsp; pierw_2(" + i + ") = " + pierw_2_zam.toFixed(2) + " &nbsp;&nbsp;&nbsp;&nbsp; pierw_4(" + i + ") = " + pierw_4_zam.toFixed(2) + "<br>");
+            tragic_licznik_zam++;
+
+            if (tragic_licznik_zam % 3 === 0 && i !== koniec_zam) {
+                let kontynuuj_zam = confirm("Wyświetlono 3 linie. Kliknij OK, aby kontynuować.");
+                if (!kontynuuj_zam) {
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kod do Zadania 53 - Zamojski</title>
+</head>
+<body>
+    <h3>Kod źródłowy pliku z53_zam.html:</h3>
+    <textarea rows="20" cols="80" readonly style="font-family: monospace;">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 53 - Zamojski</title>
+</head>
+<body>
+    <script>
+        let ile_razy_zam = parseInt(prompt("ile razy powtórzyć=", "5"));
+        let inicjaly_zam = prompt("podaj twoje inicjały=", "MZ");
+
+        for (let i = 1; i <= ile_razy_zam; i++) {
+            for (let j = 1; j < i; j++) {
+                document.write("&nbsp;&nbsp;");
+            }
+            document.write(i + "_" + inicjaly_zam + "_" + i + "<br>");
+        }
+    </script>
+</body>
+</html>
+    </textarea>
+</body>
+</html>

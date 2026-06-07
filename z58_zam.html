@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 58 - Zamojski</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>Generowanie liczb pierwszych ze wzoru: w(i) = i^2 + i + 41</h2>");
+        let tragic_licznik_zam = 0;
+
+        for (let i = 0; i < 40; i++) {
+            let w_zam = (i * i) + i + 41;
+            document.write("i = " + i + " &nbsp;&nbsp;&nbsp;&nbsp; w(" + i + ") = " + w_zam + "<br>");
+            tragic_licznik_zam++;
+
+            if (tragic_licznik_zam % 5 === 0 && i !== 39) {
+                let kontynuuj_zam = confirm("Wyświetlono 5 linii. Czy chcesz zobaczyć kolejne?");
+                if (!kontynuuj_zam) {
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

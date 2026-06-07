@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Z43_Zamojski</title>
+<script>
+function pokazPetle()
+{
+document.getElementById("wynik").innerHTML =
+"<h2>1. Pętla for</h2>" +
+"<b>Nazwa pętli:</b> for<br>" +
+"<b>Konstrukcja:</b> for(inicjalizacja; warunek; zmiana){ instrukcje; }<br>" +
+"<b>Opis:</b> Stosowana, gdy znamy liczbę powtórzeń.<br>" +
+"<b>Schemat blokowy:</b><br>Start → Inicjalizacja → Warunek? → Instrukcje → Zmiana → Warunek?<br><br>" +
+
+"<h2>2. Pętla while (kontrolowane wejście)</h2>" +
+"<b>Nazwa pętli:</b> while<br>" +
+"<b>Konstrukcja:</b> while(warunek){ instrukcje; }<br>" +
+"<b>Opis:</b> Warunek sprawdzany jest przed wykonaniem instrukcji.<br>" +
+"<b>Schemat blokowy:</b><br>Start → Warunek? → Instrukcje → Warunek?<br><br>" +
+
+"<h2>3. Pętla do...while (kontrolowane wyjście)</h2>" +
+"<b>Nazwa pętli:</b> do...while<br>" +
+"<b>Konstrukcja:</b> do { instrukcje; } while(warunek);<br>" +
+"<b>Opis:</b> Instrukcje wykonują się co najmniej jeden raz, ponieważ warunek sprawdzany jest na końcu.<br>" +
+"<b>Schemat blokowy:</b><br>Start → Instrukcje → Warunek? → Powrót do instrukcji lub Koniec";
+}
+</script>
+</head>
+<body>
+<h1>Zadanie 43</h1>
+
+<input type="button" value="Wyświetl informacje o pętlach" onclick="pokazPetle()">
+
+<div id="wynik"></div>
+
+</body>
+</html>

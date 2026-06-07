@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Kod zadania 46</title>
+</head>
+<body>
+
+<textarea cols="80" rows="25">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 46</title>
+</head>
+<body>
+
+<script>
+let ile_razy = (30 % 4) + 10;
+let wielkosc = (30 % 3) + 40;
+
+document.write("Ilość wyświetleń = " + ile_razy + "<br>");
+document.write("Wielkość liter = " + wielkosc + "px<br><br>");
+
+for(let i = 1; i <= ile_razy; i++)
+{
+    if(i % 2 == 0)
+    {
+        document.write("<span style='font-size:" + wielkosc + "px'>Michał</span><br>");
+    }
+    else
+    {
+        document.write("<span style='font-size:" + wielkosc + "px'>Zamojski</span><br>");
+    }
+}
+</script>
+
+</body>
+</html>
+</textarea>
+
+</body>
+</html>

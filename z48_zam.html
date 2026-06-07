@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Sprawdzenie danych Twoje nazwisko</title>
+</head>
+<body>
+
+<script>
+let h;
+let a;
+
+do
+{
+    h = parseFloat(prompt("Podaj wysokość h:"));
+}
+while(h <= 0);
+
+do
+{
+    a = parseFloat(prompt("Podaj podstawę a:"));
+}
+while(a <= 0);
+
+let pole = a * h / 2;
+
+document.write("Pole = " + pole.toFixed(2) + " cm²");
+</script>
+
+</body>
+</html>
